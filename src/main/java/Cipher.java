@@ -8,6 +8,9 @@ public static void main(String[] args){
       if (Choice==1) {
           System.out.println("Encryption..");
           input.nextLine();
+          System.out.println("message only in Lower");
+          System.out.print("enter Message");
+          String message=input.nextLine();
       }
       else {
           System.out.println("Decryption...");
