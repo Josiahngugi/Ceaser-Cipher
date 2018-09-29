@@ -11,11 +11,20 @@ public static void main(String[] args){
           System.out.println("message only in Lower");
           System.out.print("enter Message");
           String message=input.nextLine();
-      }
-      else {
-          System.out.println("Decryption...");
-      }
+           int key =0;
+           if (key>26) {
+               key=key%26;
+           }
+           else if(key<0){
+               key=key%26+26;
+
+           }
+
+           }
+
       }
 
-}
+      }
+
+
 
