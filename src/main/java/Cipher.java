@@ -11,8 +11,9 @@ public static void main(String[] args){
           System.out.println("message only in Lower");
           System.out.println("enter Message");
           String message=input.nextLine();
+          System.out.println("enter key");
+          int key =input.nextInt();
           int length =message.length();
-           int key =0;
            if (key>26) {
                key=key%26;
            }
