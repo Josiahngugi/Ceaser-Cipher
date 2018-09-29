@@ -11,6 +11,7 @@ public static void main(String[] args){
           System.out.println("message only in Lower");
           System.out.println("enter Message");
           String message=input.nextLine();
+          int length =message.length();
            int key =0;
            if (key>26) {
                key=key%26;
@@ -20,7 +21,7 @@ public static void main(String[] args){
 
            }
 
-           for(int i=0;i<message.length();i++){
+           for(int i=0;i<length;i++){
                char ch= message.charAt(i);
                if(Character.isLetter(ch)){
                    if(Character.isLowerCase(ch)){
