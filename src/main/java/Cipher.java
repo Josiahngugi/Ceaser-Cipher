@@ -44,11 +44,11 @@ public static void main(String[] args){
                                message+=c;
                            }
                        }
-                      System.out.println(message);
+
                    }
                }
+          System.out.println(message);
       }
-
            }
 
            }
