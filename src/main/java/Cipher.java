@@ -8,7 +8,6 @@ public static void main(String[] args){
       if (Choice==1) {
           System.out.println("Encryption..");
           input.nextLine();
-          System.out.println("message only in Lower");
           System.out.println("enter Message");
           String message=input.nextLine();
           System.out.println("enter key");
@@ -50,6 +49,15 @@ public static void main(String[] args){
                }
           System.out.println(message);
       }
+      else if(Choice==2){
+          System.out.println("Decrypting..");
+          input.nextLine();
+          System.out.println("enter Message");
+          String message=input.nextLine();
+          System.out.println("enter key");
+          System.out.println("enter key");
+      }
+
            }
 
            }
