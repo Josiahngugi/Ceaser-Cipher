@@ -9,7 +9,7 @@ public static void main(String[] args){
           System.out.println("Encryption..");
           input.nextLine();
           System.out.println("message only in Lower");
-          System.out.print("enter Message");
+          System.out.println("enter Message");
           String message=input.nextLine();
            int key =0;
            if (key>26) {
@@ -20,11 +20,38 @@ public static void main(String[] args){
 
            }
 
+           for(int i=0;i<message.length();i++){
+               char ch= message.charAt(i);
+               if(Character.isLetter(ch)){
+                   if(Character.isLowerCase(ch)){
+                       char c =(char)(ch+key);
+                       if(c >'z'){
+                           message +=(char)(ch-(26-key));
+
+                       }
+                       else {
+                           message+=c;
+                       }
+                   }
+                       else if(Character.isUpperCase(ch)){
+                           char c =(char)(ch+key);
+                           if(c >'Z'){
+                               message +=(char)(ch-(26-key));
+
+                           }
+                           else {
+                               message+=c;
+                           }
+                       }
+                      System.out.println(message);
+                   }
+               }
+      }
+
            }
 
-      }
+           }
 
-      }
 
 
 
