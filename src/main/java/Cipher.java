@@ -1,95 +1,40 @@
 public class Cipher  {
-public static String encrypt(String message, int key){
+    public static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
 
-    if(key>26){
-        key=key%26;
-    }
-    else if(key<0){
-        key =(key%26)+26;
-    }
-    String ciphermessage="";
-    int length=message.length();
-    for(int i=0;i<length;i++){
-        char ch=message.charAt(i);
-        if(Character.isLetter(ch)){
-            ciphermessage += ch;
-            if(Character.isLowerCase(ch)){
-                char c=(char)(ch+key);
-                if(c>'z'){
-                    ciphermessage +=(char)(ch-(26-key));
-                }
-                else {
-                    ciphermessage +=c;
-                }
-            }
-            else if(Character.isLowerCase(ch)){
-                char c=(char)(ch+key);
-                if(c>'Z'){
-                    ciphermessage +=(char)(ch-(26-key));
-                }
-                else {
-                    ciphermessage +=c;
-                }
-            }
-
+    public static String encrypt(String plainText, int shiftKey) {
+        plainText = plainText.toLowerCase();
+        String cipherText = "";
+        for (int i = 0; i < plainText.length(); i++) {
+            int charPosition = ALPHABET.indexOf(plainText.charAt(i));
+            int keyVal = (shiftKey + charPosition) % 26;
+            char replaceVal = ALPHABET.charAt(keyVal);
+            cipherText += replaceVal;
         }
-        else {
-            ciphermessage +=ch;
+        return cipherText;
 
-        }
     }
-    return ciphermessage;
+    public static String decrypt(String cipherText, int shiftKey)
+    {
+        cipherText = cipherText.toLowerCase();
+        String plainText = "";
+        for (int i = 0; i < cipherText.length(); i++)
+        {
+            int charPosition = ALPHABET.indexOf(cipherText.charAt(i));
+            int keyVal = (charPosition - shiftKey) % 26;
+            if (keyVal < 0)
+            {
+                keyVal = ALPHABET.length() + keyVal;
+            }
+            char replaceVal = ALPHABET.charAt(keyVal);
+            plainText += replaceVal;
+        }
+        return plainText;
+    }
+
+
 }
-    public static String dencrypt(String message, int key){
 
-        if(key>26){
-            key=key%26;
-        }
-        else if(key<0){
-            key =(key%26)+26;
-        }
-        String ciphermessage="";
-        int length=message.length();
-        for(int i=0;i<length;i++){
-            char ch=message.charAt(i);
-            if(Character.isLetter(ch)){
-                ciphermessage += ch;
-                if(Character.isLowerCase(ch)){
-                    char c=(char)(ch+=-key);
-                    if(c<'z'){
-                        ciphermessage +=(char)(ch+(26-key));
-                    }
-                    else {
-                        ciphermessage +=c;
-                    }
-                }
-                else if(Character.isLowerCase(ch)){
-                    char c=(char)(ch-key);
-                    if(c<'Z'){
-                        ciphermessage +=(char)(ch+(26-key));
-                    }
-                    else {
-                        ciphermessage +=c;
-                    }
-                }
 
-            }
-            else {
-                ciphermessage +=ch;
-
-            }
-        }
-        return ciphermessage;
-    }
-public static void main(String[] args){
-
-   String text ="maina";
-   String cipher=encrypt(text,4);
-   System.out.println(cipher);
-   String decrypt=dencrypt(cipher,4);
-   System.out.println(decrypt);
-}
-}
 
 
 
