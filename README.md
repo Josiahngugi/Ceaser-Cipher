@@ -19,7 +19,7 @@ User input Key: That specifies the way Message will be incrypted.<br>
 Message:is shifted to postion of the alphabet specified bt the key<br>
 Program :Output the encrypted message<br>
 User:input an encrypted message<br>
-User input Key: That specifies the way Message incrypted with.<br
+User input Key: That specifies the way Message incrypted with.<br>
 Message:is shifted to postion of the alphabet specified bt the key<br>
 Program :Output the origin message<br>
 ## Deployments
