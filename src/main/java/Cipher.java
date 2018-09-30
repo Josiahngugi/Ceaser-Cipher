@@ -31,7 +31,6 @@ public class Cipher  {
         return plainText;
     }
 
-
 }
 
 
