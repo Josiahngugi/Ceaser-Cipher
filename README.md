@@ -11,25 +11,25 @@ Java
 
 ## Program Specs
 
-User input New 
-User Upvotes: votes incremented.<br>
-user Downvote:Votes Decremented.<br>
-Quotes with highest Votes Highlighted<br>
-User Delete Quote:Quoted Removed from the list<br>
+User input New Message
+User input Key: That specifies the way Message will be incrypted.<br>
+Message:is shifted to postion of the alphabet specified bt the key<br>
+Program :Output the encrypted message<br>
+User:input an encrypted message<br>
+User input Key: That specifies the way Message incrypted with.<br
+Message:is shifted to postion of the alphabet specified bt the key<br>
+Program :Output the origin message<br>
 ## Deployments
 
 Git clone this project from this respitory
-Run ng Serve when already inside its directory
-Access the program from the web browser: localhost:4200
-
+Run with a edittor or a console
 ## Program testing
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-No bug in the program
+The program was designed simultaneously with unit testing.
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+This is done from individual  workstation if and only with installed with JRE, and then can do all kind of the testings
 
 ## Authors
 maina Josiah
