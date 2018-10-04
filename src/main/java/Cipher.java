@@ -1,9 +1,15 @@
 public class Cipher  {
     public static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
+    private static String plainText;
+    private int shiftKey;
 
-    public static String encrypt(String plainText, int shiftKey) {
-        plainText = plainText.toLowerCase();
+
+
+    public static String encrypt(String getplainText, int shiftKey) {
+
+        plainText = getplainText.toLowerCase();
         String cipherText = "";
+
         for (int i = 0; i < plainText.length(); i++) {
             int charPosition = ALPHABET.indexOf(plainText.charAt(i));
             int keyVal = (shiftKey + charPosition) % 26;
