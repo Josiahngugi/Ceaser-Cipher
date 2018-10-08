@@ -1,5 +1,4 @@
 public class Cipher  {
-    public static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
     private static String plainText;
     private int shiftKey;
 
@@ -7,30 +6,52 @@ public class Cipher  {
 
     public static String encrypt(String getplainText, int shiftKey) {
 
-        plainText = getplainText.toLowerCase();
+        plainText = getplainText;
         String cipherText = "";
 
         for (int i = 0; i < plainText.length(); i++) {
-            int keyVal = (shiftKey + ALPHABET.indexOf(plainText.charAt(i))) % 26;
-            cipherText += ALPHABET.charAt(keyVal);
+            if(Character.isLetter(plainText.charAt(i))){
+                if(Character.isLowerCase(plainText.charAt(i))){
+                    char ciphered_letter=(char)(plainText.charAt(i)+shiftKey);
+                    if(ciphered_letter>'z'){
+                        cipherText+=ciphered_letter;
+
+                    }
+                    else {
+                        cipherText+=ciphered_letter;
+                    }
+                }
+                else if(Character.isUpperCase(plainText.charAt(i))){
+                    char ciphered_letter=(char)(plainText.charAt(i)+shiftKey);
+                    if(ciphered_letter>'Z'){
+                        cipherText+=ciphered_letter;
+                    }
+
+                    else {
+                        cipherText+=ciphered_letter;
+                    }
+                }
+
+            }
+            else {
+                cipherText+=plainText.charAt(i);
+            }
         }
         return cipherText;
 
     }
     public static String decrypt(String cipherText, int shiftKey)
     {
-        cipherText = cipherText.toLowerCase();
+        cipherText = cipherText;
         String plainText = "";
         for (int i = 0; i < cipherText.length(); i++)
         {
-            int charPosition = ALPHABET.indexOf(cipherText.charAt(i));
-            int keyVal = (charPosition - shiftKey) % 26;
+            int keyVal = (ALPHABET.indexOf(cipherText.charAt(i))- shiftKey) % 26;
             if (keyVal < 0)
             {
                 keyVal = ALPHABET.length() + keyVal;
             }
-            char replaceVal = ALPHABET.charAt(keyVal);
-            plainText += replaceVal;
+            plainText +=  ALPHABET.charAt(keyVal);
         }
         return plainText;
     }
